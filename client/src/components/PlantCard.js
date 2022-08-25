@@ -2,7 +2,7 @@ function PlantCard({ plant, onDeletePlant, onUpdatePlant }) {
   const { id, name, image, price, is_in_stock: isInStock } = plant;
 
   function handleDeleteClick() {
-    fetch(`/plants/${id}`, {
+    fetch(`http://localhost:4000/plants/${id}`, {
       method: "DELETE",
     }).then((r) => {
       if (r.ok) {
@@ -12,7 +12,7 @@ function PlantCard({ plant, onDeletePlant, onUpdatePlant }) {
   }
 
   function handleIsInStockClick() {
-    fetch(`/plants/${id}`, {
+    fetch(`http://localhost:4000/plants/${id}`, {
       method: "PATCH",
       headers: {
         "Content-Type": "application/json",

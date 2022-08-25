@@ -8,7 +8,7 @@ function PlantPage() {
   const [searchTerm, setSearchTerm] = useState("");
 
   useEffect(() => {
-    fetch("/plants")
+    fetch("http://localhost:4000/plants")
       .then((r) => r.json())
       .then((plantsArray) => {
         setPlants(plantsArray);
